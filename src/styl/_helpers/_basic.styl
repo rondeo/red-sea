@@ -13,8 +13,8 @@ html
 
 
 body
-	font 16px $Reg
-	line-height 1.6
+	font 14px $Reg
+	line-height 1.57
 	overflow-x hidden
 	min-width 320px
 	height 100%
@@ -32,7 +32,7 @@ textarea
 	outline none
 	background transparent
 	border none
-	transition all .23s ease-in-out
+	transition all .15s ease-in-out
 	&:focus
 		outline none
 		
@@ -44,7 +44,7 @@ select
 	appearance none
 	-webkit-appearance none
 	-moz-appearance none
-	transition all .23s ease-in-out
+	transition all .15s ease-in-out
 	cursor pointer
 	&:focus
 		outline none
@@ -52,7 +52,7 @@ select
 a
 	text-decoration none
 	outline none
-	transition all .23s ease-in-out
+	transition all .15s ease-in-out
 	&:hover
 		text-decoration none
 		
@@ -61,7 +61,7 @@ button
 	border none
 	outline none
 	cursor pointer
-	transition all .23s ease-in-out
+	transition all .15s ease-in-out
 	background transparent
 	&:focus
 		outline none
@@ -80,14 +80,11 @@ img
 	pointer-events none !important
 
 .clearfix:before,
-.clearfix:after,
-.container:before,
-.container:after
+.clearfix:after
 	content " "
 	display table
 
-.clearfix:after,
-.container:after
+.clearfix:after
 	clear both
 
 .box 
@@ -102,19 +99,18 @@ img
 	width 100%
 	height 100%
 	
-.sect
-	background-size cover
-	background-repeat no-repeat
+.bg
+	bg(50%, 50%)
 	&__overlay
 		position relative
 		&:after
-			content ''
+			pseudo()
+			full()
 			position absolute
-			top 0
-			left 0
-			width 100%
-			height 100%
-			background-color rgba($sect-overlay-bg, $sect-overlay-opacity)
+			background rgb(0,74,152)
+			background -moz-linear-gradient(180deg, rgba(0,74,152,1) 0%, rgba(0,74,152,0.64) 100%)
+			background -webkit-linear-gradient(180deg, rgba(0,74,152,1) 0%, rgba(0,74,152,0.64) 100%)
+			background linear-gradient(180deg, rgba(0,74,152,1) 0%, rgba(0,74,152,0.64) 100%)
 		.container
 			position relative
 			z-index 1

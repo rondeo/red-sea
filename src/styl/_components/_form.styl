@@ -37,62 +37,103 @@
 	
 
 
-.checkbox,
-.radio
-	position relative
-	display inline-block
-	margin-left 0
-	padding-left 25px
-	&:before,
-	&:after
-		pseudo()
-		transition all .25s ease-in-out
-		position absolute
-		left 0
-		vertical-center()
-			
-	&__label
-		cursor pointer
-		display inline-block
-		font 1em $Reg
-		line-height 1
-		color $text-color
-		input
-			display none
 
-.checkbox
-	&:before
-		border-radius 4px
-		width 18px
-		height 18px
-		border 1px solid $accent-color
-		background-color transparent
+.select
+	display flex
+	justify-content flex-start
+	border 1px solid #DBF5FF
+	border-radius 4px
+	transition border-color .15s ease-in-out
+	&__wrapper
+		position relative
+		width 100%
 		
-	&__label
-		input:checked + span:before
-			background-color $dark-color
+	&__ic
+		width 44px
+		height 44px
+		flex-col-center()
+		border-top-left-radius 4px
+		border-bottom-left-radius 4px
+		background-color $color-bg
+		flex none
+		i
+			display block
+			width 19px
+			height 19px
+			background-position center center
+			background-repeat no-repeat
+			background-size 19px 19px
 			
-.radio
-	&:before
-	&:after
-		border-radius 50%
-	&:before
-		width 18px
-		height 18px
-		border 1px solid $accent-color
-		background-color $transparent
-	&:after
-		width 8px
-		height 8px
+	&__text
+		flex 1
+		background-color $light-color
+		border-top-right-radius 4px
+		border-bottom-right-radius 4px
+		display flex
+		text-align left
+		align-items center
+		padding 10px 40px 10px 15px
+		font 16px $Comf
+		color $dark-color
+		position relative
+		&:after
+			pseudo()
+			position absolute
+			vertical-center()
+			right 15px
+			width 8px
+			height 15px
+			background url('../img/icons/svg/select-arrows.svg') center center no-repeat
+			background-size 8px 15px
+			pointer-events none
+			z-index 1
+		
+	&__dropdown
+		position absolute
+		top 100%
+		left 0
+		z-index 3
+		padding-top 4px
+		margin-top 10px
 		opacity 0
-		background-color $accent-color
-		
-		left 6px
-		top 8px
-		
-	&__label
-		input:checked + span:before
-			border-color $dark-color
-		input:checked + span:after
-			opacity 1
-		
+		visibility hidden
+		pointer-events none
+		transition all .3s ease-out
+	&__options
+		border-radius 4px
+		background-color $light-color
+		box-shadow 0 3px 6px rgba($dark-color, .1)	
+	&__option
+		display block
+		text-align left
+		transition background-color .15s ease-in-out
+		background-position center left 14px
+		background-repeat no-repeat
+		background-size 19px 19px
+		padding 13px 15px 13px 59px
+		font 16px $Comf
+		cursor pointer
+		color $dark-color
+		&:hover
+			background-color $color-bg
+	
+	// &__wrapper
+	// 	&:hover
+	// 		.select
+	// 			border-color $accent-color
+	// 			&__dropdown
+	// 				opacity 1
+	// 				visibility visible
+	// 				pointer-events auto
+	// 				margin-top 0	
+	&__wrapper				
+		&.is-active
+			.select
+				border-color $accent-color
+				&__dropdown
+					opacity 1
+					visibility visible
+					pointer-events auto
+					margin-top 0		
+
+			
