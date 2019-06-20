@@ -87,8 +87,13 @@ img
 .clearfix:after
 	clear both
 
-.box 
-	padding $box-gutters
+.gutter
+	&-top
+		padding-top $gutter-top
+	&-bottom
+		padding-bottom $gutter-top
+	&-both
+		padding $gutter-top
 	
 .w3c
 	visibility hidden

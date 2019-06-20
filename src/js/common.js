@@ -175,15 +175,26 @@ $(document).ready(function() {
 
 
 	// Selects
-	$('.js-select').on('click', function(e) {
-		$(this).toggleClass('is-active');
+	$('.js-select').each(function() {
+
+		$('.js-select').on('click', function(e) {
+			$('.js-select').removeClass('is-active');
+
+			if($(this).hasClass('is-active')) {
+				$(this).removeClass('is-active');
+			}
+
+			$(this).addClass('is-active');
+			
+		});
 	});
+	
 
 	$('.js-select-option').each(function(e) {
 		var self = $(this);
-		self.on('click', function() {
+		self.on('click', function(e) {
 
-
+			e.stopPropagation();
 			var select =  self.parents('.js-select');
 			var input = select.find('input[type=hidden]');
 
@@ -196,6 +207,10 @@ $(document).ready(function() {
 			input.val(option);
 			selectIcon.css('background-image', iconSrc);
 			selectText.html(option);
+
+			if(select.hasClass('is-active')) {
+				select.removeClass('is-active');
+			}
 
 
 		});

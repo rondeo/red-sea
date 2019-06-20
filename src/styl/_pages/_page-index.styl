@@ -7,12 +7,115 @@
 	position relative
 
 
-.order__form--wrapper
-	position absolute
-	margin 0 auto
-	horisontal-center()
-	width 100%
-	bottom 250px
-	z-index 3
+.order__form
+	&--wrapper
+		position absolute
+		margin 0 auto
+		horisontal-center()
+		width 100%
+		bottom 250px
+		z-index 3
+		max-width 1000px
+	&--input-wrapper
+		width 33.33333%
+		&:first-child
+			.select
+				border-radius 4px 0 0 4px
+				&__text
+					border-radius 0
+					
 
+// About
+
+.about
+	&__row
+		margin-left -35px
+		margin-right -35px
+	&__info
+		margin-bottom 90px
+	&__col
+		width 50%
+		padding 0 35px
+		
+		
+		.content
+			margin-bottom 90px
+			&:last-child
+				margin-bottom 0
+				
+			&__with-ic
+				padding-left 40px
+				width 350px
+				position relative
+				background-repeat no-repeat
+				background-position top 7px left
+				background-size 19px 26px
+			&__with-img
+				position relative
+				padding-right 200px
+				
+		
+				
+		img
+			display block
+			margin-bottom 45px
+			box-shadow 0 0 12px rgba($dark-color, .1)
+	
+	&__img
+		width 350px
+		height 265px
+		bg(50%, 50%)
+		box-shadow 0 0 12px rgba($dark-color, .1)
+		position absolute
+		z-index 3
+		right -175px
+		vertical-center()
+		
+	&__benefits
+		padding-bottom 90px
+
+.content
+	h2
+		color $dark-accent-color
+		font 2.142857em $Comf
+		line-height 1.46
+		font-weight 700
+		margin-bottom 25px
+
+
+
+.benefit
+	display flex
+	justify-content flex-start
+	align-items center
+	&__ic
+		flex none
+		display block
+		width 22px
+		height 22px
+		background-position 50% 50%
+		background-repeat no-repeat
+		background-size 22px 22px
+		margin-right 10px
+		
+	&__count
+		font 2.142857em $Reg
+		text-transform uppercase
+		color $dark-accent-color
+		display inline-block
+		margin-right 13px
+		
+	&__content
+		display flex
+		justify-content flex-start
+		align-items center
+		p
+			text-align left
+			color #333832
+			line-height 1.14
+	&__wrapper
+		width 330px
+		padding 0 15px
+
+	
 	
