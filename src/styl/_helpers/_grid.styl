@@ -1,0 +1,38 @@
+.container
+	margin 0 auto
+	width 100%
+	max-width $container-width
+	padding $container-gutters
+	
+.row
+	flex-block()
+	&__center
+		align-items center
+		
+	&__stretch
+		align-items stretch
+		
+	&__start
+		justify-content flex-start
+		
+	&__gutters
+		margin-left $row-gutter-left
+		margin-right $row-gutter-right
+		
+.col
+	&__fifth
+		padding $col-gutters
+		width 20%	
+	&__third
+		padding $col-gutters
+		width 33.3333%
+	&__fourth
+		padding $col-gutters
+		width 25%
+	&__half
+		padding $col-gutters
+		width 50%
+	&__full
+		padding $col-gutters
+		width 100%
+	

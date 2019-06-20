@@ -1,0 +1,98 @@
+
+.input
+	display inline-block
+	width 100%
+	padding 10px 15px
+	text-align left
+	background-color $light-color
+	border 2px solid transparent
+	font 1em $Reg
+	color $text-color
+	&:hover,
+	&:focus
+		border-color $accent-color
+	&::-webkit-input-placeholder
+
+		font 1em $Reg
+		color $text-color
+	&::-moz-placeholder
+
+		font 1em $Reg
+		color $text-color
+	&:-moz-placeholder
+
+		font 1em $Reg
+		color $text-color
+	&:-ms-input-placeholder
+
+		font 1em $Reg
+		color $text-color
+		
+	&__wrapper
+		margin-bottom 15px
+		position relative
+		
+	&.is-error
+		border-color red
+	
+
+
+.checkbox,
+.radio
+	position relative
+	display inline-block
+	margin-left 0
+	padding-left 25px
+	&:before,
+	&:after
+		pseudo()
+		transition all .25s ease-in-out
+		position absolute
+		left 0
+		vertical-center()
+			
+	&__label
+		cursor pointer
+		display inline-block
+		font 1em $Reg
+		line-height 1
+		color $text-color
+		input
+			display none
+
+.checkbox
+	&:before
+		border-radius 4px
+		width 18px
+		height 18px
+		border 1px solid $accent-color
+		background-color transparent
+		
+	&__label
+		input:checked + span:before
+			background-color $dark-color
+			
+.radio
+	&:before
+	&:after
+		border-radius 50%
+	&:before
+		width 18px
+		height 18px
+		border 1px solid $accent-color
+		background-color $transparent
+	&:after
+		width 8px
+		height 8px
+		opacity 0
+		background-color $accent-color
+		
+		left 6px
+		top 8px
+		
+	&__label
+		input:checked + span:before
+			border-color $dark-color
+		input:checked + span:after
+			opacity 1
+		

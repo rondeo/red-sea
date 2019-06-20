@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.min.css">
+
+	<style>
+		.component {margin-bottom:40px; border-bottom:1px solid #f3f3f3; padding:0 30px;}
+	</style>
+</head>
+<body>
+	<!-- Overlay -->
+	<div class="overlay js-overlay"></div>
+	<!-- =================== -->
+
+	<!-- Go to up btn -->
+	<button type="button" class="btn__up js-btn-up"></button>
+	<!-- =================== -->
+	
+	<!-- Hamburger -->
+	<div class="component">
+		<button type="button" id="hamburger" class="hamburger js-mobile-menu">
+			<span class="line"></span>	
+			<span class="line"></span>	
+			<span class="line"></span>	
+		</button>
+	</div>
+	<!-- =================== -->
+	
+	<!-- Popup -->
+	<div class="component">
+		<button class="btn js-show-popup-btn" type="button">Show popup!</button>
+		<div class="popup js-popup">
+			<button class="btn__close js-close-popup-btn" type="button"></button>
+		</div>
+	</div>
+	<!-- =================== -->
+
+	<!-- Form -->
+	<div class="component">
+		<form class="form">
+			<!-- Hidden inputs -->
+			<input type="hidden" name="project_name" value="">
+			<input type="hidden" name="admin_email" value="email@email">
+			<input type="hidden" name="form_subject" value="">
+			<!-- // Hidden inputs -->
+			<div class="form__input--wrapp">
+				<input type="text" class="form__input js-input-validate" name="name" placeholder="Имя">
+			</div>	
+			<div class="form__input--wrapp">
+				<input type="tel" class="form__input js-input-validate" name="phone" placeholder="Телефон">
+			</div>	
+			<div class="form__input--wrapp">
+				<input type="mail" class="form__input js-input-validate" name="email" placeholder="E-mail">
+			</div>
+			<div class="form__input--wrapp">
+				<label for="checkbox" class="checkbox__label">
+					<input id="checkbox" name="" type="checkbox">
+					<span class="checkbox">Check!</span>
+				</label>
+			</div>		
+			<button type="submit" class="btn">SEND</button>				
+		</form> 
+	</div>
+	<!-- =================== -->
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/helpers/ajax-form-validate.js"></script>
+	<script src="js/helpers/go-to-top.js"></script>
+	<script src="js/helpers/simple-popup.js"></script>
+</body>
+</html>
