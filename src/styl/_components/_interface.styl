@@ -82,3 +82,43 @@
 		&:hover
 			svg
 				fill $dark-accent-color
+				
+
+
+.toggle
+	&__block
+		margin-top 35px
+	&__link
+		position relative
+		padding-right 17px
+		color $light-color
+		font-family $ComfReg
+		font-size  1.125em
+		line-height 1
+		display inline-block
+		&:before
+			content 'Показать еще'
+			
+		&--ic
+			display inline-block
+			width 10px
+			height 7px
+			position absolute
+			right 0
+			top 50%
+			margin-top -3.5px
+			svg
+				display block
+				width 100%
+				height 100%
+				fill $light-color
+		&.is-active
+			&:before
+				content 'Скрыть'
+				
+			.toggle__link--ic
+				transform rotate(180deg)
+				
+	&__content
+		padding-top 20px
+		display none

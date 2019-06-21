@@ -3,9 +3,20 @@
 	background -moz-linear-gradient(180deg, rgba(25,147,220,1) 0%, rgba(213,246,255,1) 100%)
 	background -webkit-linear-gradient(180deg, rgba(25,147,220,1) 0%, rgba(213,246,255,1) 100%)
 	background linear-gradient(180deg, rgba(25,147,220,1) 0%, rgba(213,246,255,1) 100%)
-	min-height 1050px
+	min-height 1150px
 	position relative
-
+	
+	&:after
+		pseudo()
+		pointer-events none
+		width 100%
+		height 225px
+		background url('../img/arch.svg') center no-repeat
+		background-size cover
+		position absolute
+		left 0
+		bottom 0
+		z-index 1
 
 .order__form
 	&--wrapper
@@ -234,6 +245,100 @@
 				width 100%
 				height 100%
 				fill $primary-color
+
+
+// Education
+.education
+	&__row
+		margin-bottom 60px
+	&__block
+		p
+			font-family $Light
+		&--img
+			height 245px
+			bg(50%, 50%)
+			position relative
+			margin-bottom 20px
+		&--price
+			display inline-block
+			padding 9px 20px
+			text-align center
+			text-transform uppercase
+			color $light-color
+			font 1.42857em $Reg
+			background $primary-color
+			background -moz-linear-gradient(90deg, rgba($primary-color-first,1) 0%, rgba($primary-color-second,1) 100%)
+			background -webkit-linear-gradient(90deg, rgba($primary-color-first,1) 0%, rgba($primary-color-second,1) 100%)
+			background linear-gradient(90deg, rgba($primary-color-first,1) 0%, rgba($primary-color-second,1) 100%)
+			position absolute
+			right 0
+			top 15px
 			
+		&--title
+			color $dark-accent-color
+			font 1.42857em $ComfBold
+			margin-bottom 25px
+			
+		&--wrapper
+			width 33.3333%
+			padding 0 15px
+			
+// About boat
+.about-boat
+	&__row
+		margin-bottom 130px
+	&__slider
+		width 570px
+		
+	&__content
+		flex 1
+		padding-left 60px
+		display flex
+		flex-direction column
+		justify-content space-between
+		padding 22px 0 22px 60px
+		.content
+			h2,h3
+				font 1.7142857em $ComfReg
+				color $dark-color
+				margin-bottom 40px
+				
+			h4,h5,h6
+				color $dark-color
+				font 1.142857em $ComfReg
+				margin-bottom 25px
+				line-height 1.375
+				
+			p
+				font-family $Light
+			
+		.btn
+			margin-top 25px
+			
+
+// REst
+
+.rest__block
+	color $dark-color
+	text-align left
+	&--img
+		height 200px
+		bg(50%, 50%)
+		margin-bottom 17px
+	&--title
+		color $dark-accent-color
+		font 1.42857em $ComfBold
+		margin-bottom 15px
+	&--wrapper
+		width 25%
+		padding 15px
+		
+// Gallery
+.sect__gallery
+	.sect__title
+		margin-bottom 55px
+
+			
+
 	
 	

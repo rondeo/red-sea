@@ -102,7 +102,47 @@ $(document).ready(function() {
 
 	});
 
-	// Services tab
+
+
+	$('.js-slider-with-thumbs').each(function() {
+
+		var galleryThumbs = new Swiper($(this).parents('.slider').find('.js-slider-with-thumbs-thumbs'), {
+			spaceBetween: 20,
+			slidesPerView: 4,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+		});
+
+		var galleryTop = new Swiper($(this), {
+			spaceBetween: 0,
+			slidesPerView: 1,
+			scrollbar: {
+				el: $(this).parents('.slider').find('.js-slider-with-thumbs-scroll'),
+				hide: false,
+				draggable: true
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			},
+
+			navigation: {
+				nextEl: $(this).parents('.slider').find('.js-slider-with-thumbs-btn-next'),
+				prevEl: $(this).parents('.slider').find('.js-slider-with-thumbs-btn-prev'),
+			},
+		});
+	});
+
+
+	var swiper = new Swiper('.js-gallery-slider', {
+      slidesPerView: 3,
+      spaceBetween: 10,
+      centeredSlides: true,
+      loop: true
+     
+    });
+
+		// Services tab
 	$('.js-tab-content').not(":first").hide();
 
 	$(".js-tab-btn").on('click', function() {
@@ -110,60 +150,7 @@ $(document).ready(function() {
 		$(".js-tab-content").hide().eq($(this).index()).fadeIn();
 	}).eq(0).addClass("is-active");
 
-
 	
-	
-
-	// var gallerySlider = new Swiper('.js-gallery-slider', {
-	// 	slidesPerView: 6,
-	// 	spaceBetween: 0,
-	// 	navigation: {
-	// 		nextEl: '.js-gallery-slider-btn-next',
-	// 		prevEl: '.js-gallery-slider-btn-prev',
-	// 	},
-	// 	scrollbar: {
-	// 		el: '.js-gallery-slider-scrollbar',
-	// 		hide: false,
-	// 		draggable: true
-	// 	},
-
-	// 	breakpoints: {
-	// 		1000: {
-	// 			slidesPerView: 5
-	// 		},
-	// 		850: {
-	// 			slidesPerView: 4
-	// 		},
-	// 		650: {
-	// 			slidesPerView: 3
-	// 		},
-	// 		420: {
-	// 			slidesPerView: 2
-	// 		}
-
-	// 	}
-	// });
-
-	var galleryThumbs = new Swiper('.js-slider-with-thumbs-thumbs', {
-		spaceBetween: 20,
-		slidesPerView: 4,
-		freeMode: true,
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
-	});
-	
-	var galleryTop = new Swiper('.js-slider-with-thumbs', {
-		spaceBetween: 0,
-		slidesPerView: 1,
-		scrollbar: {
-			el: '.js-slider-with-thumbs-scroll',
-			hide: false,
-			draggable: true
-		},
-		thumbs: {
-			swiper: galleryThumbs
-		}
-	});
 
 
 	// Selects
@@ -205,6 +192,15 @@ $(document).ready(function() {
 			}
 
 
+		});
+	});
+
+	// Toggle content
+	$('.js-toggle-link').each(function() {
+		$(this).on('click', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('is-active');
+			$(this).next('.js-toggle-content').slideToggle(150);
 		});
 	});
 	
