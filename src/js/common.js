@@ -212,5 +212,15 @@ $(document).ready(function() {
 			$(this).next('.js-toggle-content').slideToggle(150);
 		});
 	});
+
+
+	$('.js-input-date').dateRangePicker({
+		format: 'DD-MM-YYYY',
+		separator: ' - ',
+		language: 'ru',
+		startOfWeek: 'monday',
+		container:'.js-date-wrapper',
+		showTopbar: false
+	});
 	
 });

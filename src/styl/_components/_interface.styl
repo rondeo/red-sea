@@ -127,3 +127,94 @@
 	&__content
 		padding-top 20px
 		display none
+		
+
+
+// Datepicker
+.date
+	&-picker
+		&-wrapper
+			border none
+			border-radius 4px
+			background-color $light-color
+			box-shadow 0 3px 6px rgba($dark-color, .1)
+			padding 25px 35px 35px 35px
+			width 100%
+			max-width 520px
+			z-index 6
+			.drp_top-bar
+				display none
+				
+			table
+				.caption
+					.prev,
+					.next
+						color $dark-accent-color
+						font-size 17px
+						&:hover
+							background-color rgba($accent-color, .77)
+						
+				
+			.month
+				&-wrapper
+					width 100% !important
+					border none
+					border-radius 0
+					padding 0
+					// display flex
+					// .month1,
+					// .month2
+					// 	float none
+					table
+						width 47% !important
+						
+					.gap
+						width 6% !important
+						margin 0
+						background transparent !important
+						&-lines
+							display none
+				
+						
+					table
+						.day
+							font 14px $Reg
+							color #333832
+							&.real-today
+								background-color $accent-color
+								color $light-color !important
+
+							&.toMonth.hovering
+								background-color rgba($accent-color, .77) !important
+								color $light-color !important
+								
+							&.checked
+								color $light-color !important
+
+					
+				&-element
+					color $dark-accent-color
+					font 13px $ComfReg
+					
+			.week
+				&-name
+					font 13px $ComfBold
+					color rgba($dark-accent-color, .58)
+						
+
+			.first-date-selected,
+			.last-date-selected
+				background-color $accent-color !important
+				color $light-color !important
+				
+			.footer
+				display none
+				
+			.date-range-length-tip
+				background-color $primary-color
+				color $light-color
+				&:after
+					border-color $primary-color
+			
+						
+				
