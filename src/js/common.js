@@ -128,17 +128,26 @@ $(document).ready(function() {
 
 			navigation: {
 				nextEl: $(this).parents('.slider').find('.js-slider-with-thumbs-btn-next'),
-				prevEl: $(this).parents('.slider').find('.js-slider-with-thumbs-btn-prev'),
+				prevEl: $(this).parents('.slider').find('.js-slider-with-thumbs-btn-prev')
 			},
 		});
 	});
 
 
 	var swiper = new Swiper('.js-gallery-slider', {
-      slidesPerView: 3,
-      spaceBetween: 10,
+     slidesPerView: 'auto',
       centeredSlides: true,
-      loop: true
+      loop: true,
+      scrollbar: {
+				el:'.js-gallery-slider-scrollbar',
+				hide: false,
+				draggable: true
+			},
+
+			navigation: {
+				nextEl: '.js-gallery-slider-btn-next',
+				prevEl: '.js-gallery-slider-btn-prev'
+			},
      
     });
 

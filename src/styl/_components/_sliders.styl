@@ -152,6 +152,11 @@
 			background-color rgba($dark-accent-color, .15)
 			.swiper-scrollbar-drag
 				background-color $dark-accent-color
+				
+		&--lg
+			height 3px
+			.swiper-scrollbar-drag
+				height 3px
 			
 	.swiper-slide-thumb-active
 		.slide__thumb
@@ -212,16 +217,14 @@
 	&__slider
 		position relative
 		z-index 2
+		margin-bottom 50px
 		
-		.swiper-slide
-			transform scale(.5, .5)
-			transition transform .5s ease-in-out
-			&-active
-				transform scale(1, 1)
-	
+
 	&__slide
 		display flex
 		height 425px
+		width 100%
+		transition transform .2s ease-out
 		&--col
 			width 50%
 			height 100%
@@ -232,3 +235,26 @@
 			height 100%
 			bg(50%, 50%)
 			
+	&__slider
+		.swiper-slide
+			flex-col-center()
+			width 1170px
+			
+			.gallery__slide
+				transform scale(0.6, 0.6)
+				
+			&-active
+				.gallery__slide
+					transform scale(1, 1)
+					
+		&--controls
+			position absolute
+			vertical-center()
+			z-index 1
+			width 100%
+			.slider__btn
+				&--prev
+					left 1px
+				&--next
+					right 1px
+		
