@@ -1,2 +1,54 @@
 .footer
-	background-color $footer-bg
+	
+	&__col
+		width 33.33333%
+		padding 0 15px
+
+		
+	&__top
+		padding 35px 0
+		background-color $dark-accent-color
+		
+	&__bottom
+		padding 15px 0
+		background-color #003F82
+		
+	&__slogan
+		margin-top 20px
+		
+		font 1em $ComfReg
+		line-height 1.5
+		
+	&__title
+		margin-bottom 15px
+		font-family $ComfReg
+		
+	&__list
+		color #BBEAFB
+		font-family $Light
+		li
+			line-height 1.57
+			margin-bottom 7px
+			&:last-child
+				margin-bottom 0
+		a
+			color inherit
+			&:hover
+				text-decoration underline
+			
+	&__contacts
+		font-family $Light
+		&--item
+			color #BBEAFB
+			margin-top 4px
+			a
+				color inherit
+		&--block
+			margin-bottom 20px
+			&:last-child
+				margin-bottom 0
+				
+
+.copyright
+	font 13px $ComfReg
+	color rgba(255,255,255, .69)
